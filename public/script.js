@@ -87,6 +87,21 @@ function clearUiError() {
   }
 }
 
+function showUiSuccess(message) {
+  let toast = document.getElementById('action-success-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'action-success-toast';
+    toast.className = 'success-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 4000);
+}
+
 // ==========================================================================
 // Top Bar Scroll Shadow & Navigation
 // ==========================================================================
@@ -586,8 +601,7 @@ function handleOpenInstagramApp(e) {
 }
 
 // ==========================================================================
-// Share Image to Instagram Story Handler
-// Feature-detects navigator.canShare with files; opens Instagram modal seamlessly
+// Direct Share to Instagram Story Handler
 // ==========================================================================
 async function handleShareImage() {
   if (!appState.currentBlob) return;
@@ -595,11 +609,11 @@ async function handleShareImage() {
 
   const file = new File([appState.currentBlob], appState.currentFilename, { type: 'image/jpeg' });
 
-  // 1. If mobile browser supports Web Share API with files, trigger native share sheet
+  // 1. Mobile Web Share API: triggers OS native share sheet directly.
+  // When user picks Instagram Stories, the image is passed directly into Instagram Story
+  // memory buffer without the user having to save it in their gallery or storage first!
   if (navigator.canShare && navigator.canShare({ files: [file] })) {
     try {
-      // Pass only files to ensure native OS share sheets on iOS & Android
-      // show Instagram Stories and other photo apps directly, instead of forcing text
       await navigator.share({
         files: [file],
       });
@@ -607,15 +621,64 @@ async function handleShareImage() {
       return;
     } catch (err) {
       if (err.name === 'AbortError') {
-        // User dismissed the native share sheet
+        // User closed the share sheet
         return;
       }
-      console.warn('Native share failed or declined, opening Instagram Story modal:', err);
+      console.warn('Native share failed:', err);
     }
   }
 
-  // 2. If navigator.share is unsupported (e.g. desktop Chrome, webviews, GitHub Pages desktop)
-  // or if sharing failed: NEVER silently trigger download! Open the dedicated Instagram Story modal!
+  // 2. Direct Instagram Story Action for Browsers / In-App Browsers / Desktop:
+  // Copy the converted photo directly to clipboard memory (0 storage used)
+  // and launch Instagram Story Camera directly via deep link!
+  let copiedSuccessfully = false;
+  try {
+    if (navigator.clipboard && window.ClipboardItem) {
+      // Create PNG blob for universal clipboard support
+      const img = new Image();
+      img.src = appState.currentObjectUrl;
+      await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+
+      const canvas = document.createElement('canvas');
+      canvas.width = img.naturalWidth || 3024;
+      canvas.height = img.naturalHeight || 4032;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+
+      const pngBlob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+      if (pngBlob) {
+        await navigator.clipboard.write([
+          new ClipboardItem({ 'image/png': pngBlob })
+        ]);
+        copiedSuccessfully = true;
+      }
+    }
+  } catch (clipErr) {
+    console.warn('Direct clipboard copy attempt:', clipErr);
+  }
+
+  // Try opening Instagram Story Camera directly via deep link on mobile
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    // Direct launch into Instagram Story Camera
+    window.location.href = 'instagram://story-camera';
+    
+    // Show instant status toast
+    if (copiedSuccessfully) {
+      showUiSuccess('Photo copied directly to clipboard! Paste it right into your Instagram Story.');
+    }
+    
+    // Fallback: If Instagram app does not take over in 1.2 seconds, display the interactive modal
+    setTimeout(() => {
+      openInstagramModal();
+    }, 1200);
+    return;
+  }
+
+  // Desktop or browsers requiring interactive guidance
   openInstagramModal();
 }
 
