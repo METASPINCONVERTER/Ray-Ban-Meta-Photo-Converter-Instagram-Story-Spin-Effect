@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3024×4032 Photo Converter – Ray-Ban Meta Image Tool | MetaSpin</title>
+  <meta name="description" content="Free online 3024×4032 photo converter. Resize and crop photos to 3:4 portrait resolution with Meta AI smart glasses EXIF for Instagram 3D spin view.">
+  <link rel="canonical" href="https://metaspin.zplaybox.in/3024x4032-photo-converter/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://metaspin.zplaybox.in/3024x4032-photo-converter/">
+  <meta property="og:title" content="3024×4032 Photo Converter – Ray-Ban Meta Image Tool | MetaSpin">
+  <meta property="og:description" content="Convert any image to 3024×4032 (3:4) resolution with Ray-Ban Meta smart glasses tags. 100% free and in-browser.">
+  <meta property="og:image" content="https://metaspin.zplaybox.in/assets/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/app-icon.svg">
+  <link rel="stylesheet" href="/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "3024×4032 Photo Converter for Ray-Ban Meta Smart Glasses",
+    "description": "How to convert standard landscape or portrait photos to exact 3024×4032 resolution for Ray-Ban Meta Instagram Story compatibility.",
+    "url": "https://metaspin.zplaybox.in/3024x4032-photo-converter/",
+    "image": "https://metaspin.zplaybox.in/assets/og-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "metaspin"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "metaspin",
+      "url": "https://metaspin.zplaybox.in/"
+    },
+    "datePublished": "2026-03-01",
+    "dateModified": "2026-03-03"
+  }
+  </script>
+</head>
+<body>
+  <header class="top-header">
+    <div class="container nav-content">
+      <a href="/" class="brand-lockup" aria-label="metaspin Home">
+        <img class="brand-icon" src="/assets/app-icon.svg" alt="metaspin logo" width="36" height="36">
+        <span class="brand-title">metaspin</span>
+        <div class="brand-divider" aria-hidden="true"></div>
+        <span class="co-brand-tag">×</span>
+        <img class="co-brand-logo-img" src="/assets/zplaybox-logo.svg" alt="ZPlayBox Co-brand Logo" width="92" height="28" style="border-radius: 4px;">
+      </a>
+      <nav class="nav-actions" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="/#upload-section" class="nav-link">Converter</a></li>
+          <li><a href="/#how-it-works" class="nav-link">How it Works</a></li>
+          <li><a href="/#guides-section" class="nav-link">Guides</a></li>
+          <li><a href="/#faq" class="nav-link">FAQ</a></li>
+          <li><a href="/about/" class="nav-link">About</a></li>
+        </ul>
+        <a href="/#upload-section" class="btn-nav-primary">Convert Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="article-container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-separator">/</li>
+          <li class="breadcrumb-item"><a href="/#guides-section">Guides</a></li>
+          <li class="breadcrumb-separator">/</li>
+          <li class="breadcrumb-item breadcrumb-current" aria-current="page">3024×4032 Photo Converter</li>
+        </ol>
+      </nav>
+
+      <div class="article-hero">
+        <h1 class="article-title">3024×4032 Photo Converter for Ray-Ban Meta Smart Glasses</h1>
+        <p class="article-subtitle">How to reformat images of any resolution or aspect ratio into the native 3:4 portrait resolution demanded by Meta smart-glasses features.</p>
+        <div class="article-meta">
+          <span>By MetaSpin Technical Team</span>
+          <span>&bull;</span>
+          <span>4 min read</span>
+          <span>&bull;</span>
+          <span>Updated March 2026</span>
+        </div>
+      </div>
+
+      <div class="article-body">
+        <h2>Why 3024 × 4032 is the Magic Resolution</h2>
+        <p>
+          Ray-Ban Meta smart glasses feature an on-board sensor configured to shoot 12 Megapixels in a vertical orientation. In digital imaging mathematics, a 12 Megapixel 3:4 image corresponds to:
+        </p>
+        <p style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary); text-align: center; margin: 20px 0;">
+          3024 (Width) &times; 4032 (Height) = 12,192,768 Pixels
+        </p>
+        <p>
+          When you upload an image to an Instagram Story, Instagram's media ingestion pipeline reads the raster dimensions. If the dimensions deviate (for example, 1080 × 1920 or 4032 × 3024), Instagram classifies the image as a mobile phone screenshot or landscape photo and skips the smart glasses parallax pipeline.
+        </p>
+
+        <h2>How MetaSpin's Cover-Crop Algorithm Works</h2>
+        <p>
+          When converting an image to 3024 × 4032, simple stretching or letterboxing would introduce black bars or distort facial proportions. MetaSpin utilizes an intelligent <strong>cover-crop</strong> geometry calculation:
+        </p>
+        <ol>
+          <li>
+            <strong>Aspect Ratio Evaluation:</strong> Compares the source image's aspect ratio against target <code>3 / 4 (0.75)</code>.
+          </li>
+          <li>
+            <strong>Centered Crop Window:</strong> Computes the maximum visible central rectangle from the original photo without distorting pixel aspect ratio.
+          </li>
+          <li>
+            <strong>High-Fidelity Canvas Rescaling:</strong> Employs bicubic image smoothing on an off-screen HTML5 Canvas configured with <code>imageSmoothingQuality = 'high'</code>.
+          </li>
+          <li>
+            <strong>JPEG 92% Re-encoding:</strong> Outputs an optimal quality-to-filesize JPEG before injecting the Meta EXIF APP1 header.
+          </li>
+        </ol>
+
+        <div class="article-callout">
+          <div class="article-callout-title">Works with Landscape and Square Photos</div>
+          <p>
+            Whether your original photo is a wide 16:9 panoramic shot, a classic 1:1 square, or a high-res mirrorless RAW export, MetaSpin centers the focal area and renders it directly to 3024 × 4032.
+          </p>
+        </div>
+
+        <div class="article-cta-box">
+          <h3>Convert Your Photo to 3024×4032 Now</h3>
+          <p>Instant browser conversion. No software download or account registration required.</p>
+          <a href="/#upload-section" class="btn-primary" style="display: inline-flex; width: auto; padding: 14px 28px;">Start Conversion</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-lockup">
+          <img class="brand-icon" src="/assets/app-icon.svg" alt="metaspin logo" width="36" height="36">
+          <span class="brand-title" style="font-size: 1.25rem;">metaspin</span>
+          <div class="footer-divider" aria-hidden="true"></div>
+          <img class="footer-co-brand-logo" src="/assets/zplaybox-logo.svg" alt="ZPlayBox Co-brand Logo" width="92" height="28" style="border-radius: 4px;">
+        </div>
+        <p class="footer-tagline">MetaSpin &bull; 100% Client-Side In-Browser Processing &bull; Open Web Utility</p>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>MetaSpin Photo Tools</h4>
+          <p class="footer-about-text">Free client-side photo formatting tool for Ray-Ban Meta Instagram Story 3D spin views.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul class="footer-links">
+            <li><a href="/#upload-section" class="footer-link">Ray-Ban Meta Converter</a></li>
+            <li><a href="/3024x4032-photo-converter/" class="footer-link">3024×4032 Image Converter</a></li>
+            <li><a href="/ray-ban-meta-exif/" class="footer-link">Meta AI EXIF Tool</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul class="footer-links">
+            <li><a href="/instagram-ray-ban-story/" class="footer-link">Instagram Story Guide</a></li>
+            <li><a href="/ray-ban-meta-image-format/" class="footer-link">Image Format (3:4)</a></li>
+            <li><a href="/ray-ban-meta-instagram-spin-effect/" class="footer-link">Spin Effect Fixes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Trust &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="/about/" class="footer-link">About MetaSpin</a></li>
+            <li><a href="/contact/" class="footer-link">Contact</a></li>
+            <li><a href="/privacy-policy/" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms/" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        <p style="margin-bottom: 6px;">
+          <strong>Independent Disclaimer:</strong> MetaSpin is an independent third-party photo utility and is not affiliated with, sponsored by, authorized by, or endorsed by Meta Platforms, Inc., Ray-Ban, EssilorLuxottica, or Instagram. All product and company names are trademarks™ or registered® trademarks of their respective holders.
+        </p>
+        <p style="margin-bottom: 8px;">
+          Ray-Ban&reg; is a registered trademark of Luxottica Group S.p.A. Meta&reg; and Instagram&reg; are registered trademarks of Meta Platforms, Inc. All trademarks, service marks, and trade names referenced on this site belong to their respective owners and are used strictly for identification and compatibility purposes.
+        </p>
+        <p class="copyright" style="font-size: 0.8rem; color: var(--color-text-subtle);">&copy; 2026 MetaSpin. 100% Client-Side In-Browser Processing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

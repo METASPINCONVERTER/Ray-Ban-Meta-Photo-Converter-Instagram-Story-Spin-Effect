@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Title & Description -->
+  <title>MetaSpin – Instagram 3D Spin View Photo Converter (3024×4032)</title>
+  <meta name="description" content="Free online MetaSpin photo converter. Format photos to exact 3024×4032 resolution with smart glasses EXIF metadata for Instagram Story 3D spin view. 100% client-side privacy.">
+  <meta name="keywords" content="metaspin, 3d spin photo converter, Instagram 3D spin view, Ray-Ban Meta photo converter, convert image to 3:4, 3024x4032 image converter, Meta AI EXIF photo, Instagram Story spin effect, smart glasses photo">
+  <meta name="author" content="MetaSpin">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://metaspin.zplaybox.in/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metaspin.zplaybox.in/">
+  <meta property="og:title" content="MetaSpin – Instagram 3D Spin View Photo Converter (3024×4032)">
+  <meta property="og:description" content="Format photos to 3024×4032 (3:4) and inject smart glasses EXIF tags for Instagram Story 3D spin view. 100% on-device & private.">
+  <meta property="og:image" content="https://metaspin.zplaybox.in/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MetaSpin – Instagram 3D Spin View Photo Converter">
+  <meta property="og:site_name" content="metaspin">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://metaspin.zplaybox.in/">
+  <meta name="twitter:title" content="MetaSpin – Instagram 3D Spin View Photo Converter (3024×4032)">
+  <meta name="twitter:description" content="Free online tool to reformat photos to 3024×4032 with smart glasses EXIF signature for Instagram Story 3D spin view.">
+  <meta name="twitter:image" content="https://metaspin.zplaybox.in/assets/og-image.png">
+
+  <!-- Google Search Console Site Verification (Configurable) -->
+  <meta name="google-site-verification" content="">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/app-icon.svg">
+  <link rel="apple-touch-icon" href="./assets/app-icon.svg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Zero-dependency piexifjs UMD for client-side JPEG EXIF injection (local first, CDN fallback) -->
+  <script src="./assets/piexif.js"></script>
+  <script>
+    if (typeof piexif === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/piexifjs@1.0.6/piexif.js"><\/script>');
+    }
+  </script>
+
+  <!-- Structured Data / JSON-LD: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "metaspin",
+    "url": "https://metaspin.zplaybox.in/",
+    "description": "MetaSpin Instagram Story 3D Spin View Photo Converter & Metadata Utility.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://metaspin.zplaybox.in/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Structured Data / JSON-LD: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "MetaSpin Photo Converter",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "All modern web browsers (iOS, Android, macOS, Windows, Linux)",
+    "browserRequirements": "Requires HTML5 Canvas and modern JavaScript support",
+    "url": "https://metaspin.zplaybox.in/",
+    "description": "Free client-side tool that reformats photos to exact 3024×4032 resolution and injects smart-glasses EXIF metadata for Instagram Story 3D spin view.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Exact 3024 × 4032 px (3:4 portrait) aspect ratio geometry conversion",
+      "Authentic Meta AI and Smart Glasses EXIF injection",
+      "sRGB ColorSpace compliance (0xA001 = 1) for Instagram feature detection",
+      "Zero server uploads: 100% on-device client-side browser processing",
+      "Automatic private GPS IFD stripping for personal security"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data / JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "metaspin",
+    "url": "https://metaspin.zplaybox.in/",
+    "logo": "https://metaspin.zplaybox.in/assets/app-icon.svg"
+  }
+  </script>
+
+  <!-- Structured Data / JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Ray-Ban Meta photo converter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Ray-Ban Meta photo converter is a specialized image utility that reformats standard photos into the exact resolution (3024×4032) and EXIF metadata profile of Ray-Ban Meta smart glasses. This allows Instagram's Story camera to detect the hardware signature and unlock its native 3D Parallax Spin view effect."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert an image for a Ray-Ban Meta Instagram Story?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload or paste any photo into MetaSpin. The converter crops the image to 3024×4032 (3:4 aspect ratio) and injects the Meta AI hardware signature into the JPEG header. Save the image, open Instagram Story, select the photo from your camera roll, and tap the circular 3D Spin icon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What image size does the converter produce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The converter outputs high-resolution JPEG images measuring exactly 3024 pixels wide by 4032 pixels tall (12 Megapixels) in a 3:4 portrait aspect ratio, matching the native sensor of Ray-Ban Meta Smart Glasses 2."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the converter upload my photos to any server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All conversion, cropping, and EXIF injection happens locally in your web browser using client-side HTML5 Canvas and binary data processing. Your photos never leave your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the converter without owning Ray-Ban Meta smart glasses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The converter formats existing photos taken on smartphones or cameras with the required hardware tags and geometry so anyone can experience the 3D parallax effect on Instagram Story."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the Instagram 3D spin effect not appear?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The spin effect may not appear if the photo was sent through messaging apps like WhatsApp or Telegram that strip EXIF data, if the photo is posted to the regular Instagram Feed carousel instead of Instagram Story, or if the Instagram app is outdated."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- ======================================================================
+       Top Bar Header (Desktop & Mobile)
+       ====================================================================== -->
+  <header class="top-header">
+    <div class="container nav-content">
+      <!-- Left side: App Logo + Title + Co-Brand Lockup -->
+      <a href="./" class="brand-lockup" aria-label="metaspin Home">
+        <img class="brand-icon" src="./assets/app-icon.svg" alt="metaspin logo" width="36" height="36">
+        <span class="brand-title">metaspin</span>
+
+        <!-- Desktop Co-Brand Lockup -->
+        <div class="brand-divider" aria-hidden="true"></div>
+        <span class="co-brand-tag">×</span>
+        <img class="co-brand-logo-img" src="./assets/zplaybox-logo.svg" alt="ZPlayBox Co-brand Logo" width="92" height="28" style="border-radius: 4px;">
+      </a>
+
+      <!-- Right side: Desktop Navigation Links & Convert Now Button -->
+      <nav class="nav-actions" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#upload-section" class="nav-link">Converter</a></li>
+          <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
+          <li><a href="#guides-section" class="nav-link">Guides</a></li>
+          <li><a href="#comparison" class="nav-link">Comparison</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="./about/" class="nav-link">About</a></li>
+        </ul>
+        <a href="#upload-section" class="btn-nav-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          <span>Convert Now</span>
+        </a>
+      </nav>
+
+      <!-- Mobile Hamburger Button (≤768px) -->
+      <button id="hamburger-btn" class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       Mobile Slide-in Drawer & Dark Scrim
+       ====================================================================== -->
+  <div id="drawer-scrim" class="drawer-scrim" aria-hidden="true"></div>
+  <aside id="mobile-drawer" class="drawer" aria-label="Mobile Navigation" role="dialog" aria-modal="true">
+    <div>
+      <div class="drawer-header">
+        <div class="drawer-brand">
+          <img class="brand-icon" src="./assets/app-icon.svg" alt="metaspin logo" width="30" height="30">
+          <span>metaspin</span>
+        </div>
+        <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close navigation menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="drawer-nav-list">
+        <li class="drawer-nav-item"><a href="#upload-section" class="drawer-nav-link">Converter Tool</a></li>
+        <li class="drawer-nav-item"><a href="#how-it-works" class="drawer-nav-link">How it Works</a></li>
+        <li class="drawer-nav-item"><a href="#guides-section" class="drawer-nav-link">Photo Guides</a></li>
+        <li class="drawer-nav-item"><a href="#comparison" class="drawer-nav-link">Comparison</a></li>
+        <li class="drawer-nav-item"><a href="#faq" class="drawer-nav-link">FAQ</a></li>
+        <li class="drawer-nav-item"><a href="./about/" class="drawer-nav-link">About MetaSpin</a></li>
+        <li class="drawer-nav-item"><a href="./privacy-policy/" class="drawer-nav-link">Privacy Policy</a></li>
+        <li class="drawer-nav-item"><a href="./contact/" class="drawer-nav-link">Contact</a></li>
+      </ul>
+
+      <div class="drawer-cta">
+        <a href="#upload-section" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          <span>Convert Now</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Co-brand lockup pinned at bottom of drawer -->
+    <div class="drawer-footer">
+      <span class="co-brand-tag" style="font-size: 0.72rem;">PARTNER CO-BRAND</span>
+      <div class="drawer-co-brand-lockup">
+        <img class="brand-icon" src="./assets/app-icon.svg" alt="metaspin logo" width="30" height="30">
+        <span style="color: var(--color-text-subtle); font-weight: 700;">×</span>
+        <img class="co-brand-logo-img" src="./assets/zplaybox-logo.svg" alt="ZPlayBox Logo" style="height: 22px; width: auto; max-width: 90px; border-radius: 4px;">
+      </div>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       Main App Workspace
+       ====================================================================== -->
+  <main class="container">
+    <div class="tool-wrapper">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="badge-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          <span>Instagram 3D Parallax Unlocker</span>
+        </div>
+        <h1>Ray-Ban Meta Photo Converter</h1>
+        <p>Reformat any photo with the exact 3024 × 4032 (3:4) resolution and authentic Meta AI smart-glasses EXIF signature to unlock Instagram's 3D Parallax Spin view effect. 100% on-device client-side privacy.</p>
+      </section>
+
+      <!-- Upload Section Anchor -->
+      <div id="upload-section"></div>
+
+      <!-- Card: Photo Input & Actions -->
+      <div id="upload-card" class="card">
+        <!-- Hidden file inputs -->
+        <input type="file" id="file-input-library" accept="image/*" class="hidden" aria-label="Upload photo from library">
+        <input type="file" id="file-input-camera" accept="image/*" capture="environment" class="hidden" aria-label="Take photo with camera">
+
+        <!-- Inline Error Banner -->
+        <div id="conversion-error-banner" class="error-banner hidden" role="alert"></div>
+
+        <!-- Three Quick Action Buttons -->
+        <div class="quick-actions">
+          <label for="file-input-camera" id="btn-action-camera" class="btn-quick" role="button" tabindex="0" aria-label="Take photo with camera">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+              <circle cx="12" cy="13" r="3"/>
+            </svg>
+            <span>Take Photo</span>
+          </label>
+          <label for="file-input-library" id="btn-action-library" class="btn-quick" role="button" tabindex="0" aria-label="Choose photo from library">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+              <circle cx="9" cy="9" r="2"/>
+              <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+            </svg>
+            <span>Photo Library</span>
+          </label>
+          <button type="button" id="btn-action-paste" class="btn-quick" aria-label="Paste image from clipboard">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+            </svg>
+            <span>Paste (Ctrl+V)</span>
+          </button>
+        </div>
+
+        <!-- Drop Zone as label for direct clicking -->
+        <label for="file-input-library" id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Drop photo here or click to browse files">
+          <div class="drop-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+          </div>
+          <div class="drop-title">Tap or Drag &amp; Drop Photo Here</div>
+          <div class="drop-subtext">Automatically formatted to 3024 × 4032 (3:4) with Meta AI smart glasses EXIF signature</div>
+          <div class="drop-formats">
+            <span class="format-chip">JPG</span>
+            <span class="format-chip">PNG</span>
+            <span class="format-chip">WEBP</span>
+            <span class="format-chip">HEIC</span>
+          </div>
+        </label>
+
+        <div class="sample-trigger-row">
+          <button type="button" id="btn-load-sample" class="btn-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16 10 8"/>
+            </svg>
+            <span>Or try with a sample photo</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card: Processing State -->
+      <div id="processing-card" class="card processing-overlay hidden" role="status" aria-live="polite">
+        <div class="spinner"></div>
+        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 6px;">Processing Photo Locally</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.92rem;">Normalizing orientation, cover-cropping to 3024 × 4032, and injecting Meta AI EXIF...</p>
+      </div>
+
+      <!-- Card: Result Panel -->
+      <div id="result-card" class="card hidden">
+        <div class="result-panel">
+          <div class="result-preview-card">
+            <img id="result-preview-img" class="result-preview-img" src="" alt="Converted Ray-Ban Meta Photo ready for Instagram 3D Spin View">
+            <div class="preview-badge-overlay">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+              </svg>
+              <span>3024 × 4032 • 3:4 Meta Profile</span>
+            </div>
+          </div>
+
+          <!-- Four Info Chips -->
+          <div class="info-chips-grid">
+            <div class="info-chip">
+              <span class="chip-label">Dimensions</span>
+              <span class="chip-value">3024 × 4032 px</span>
+            </div>
+            <div class="info-chip">
+              <span class="chip-label">EXIF Camera</span>
+              <span class="chip-value">Meta AI Glasses</span>
+            </div>
+            <div class="info-chip">
+              <span class="chip-label">Instagram Feature</span>
+              <span class="chip-value highlight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"/>
+                  <path d="m14 7 3 3"/>
+                </svg>
+                3D Spin View
+              </span>
+            </div>
+            <div class="info-chip">
+              <span class="chip-label">Privacy Guard</span>
+              <span class="chip-value">100% On-Device</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-buttons">
+            <button type="button" id="share-btn" class="btn-primary" aria-label="Share converted image to Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+              <span>Share Image</span>
+            </button>
+
+            <a id="download-btn" href="#" download="ray-ban-meta-spin-photo.jpg" class="btn-secondary" aria-label="Download converted 3024x4032 JPEG photo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span>Download High-Res JPEG</span>
+            </a>
+
+            <button type="button" id="reset-btn" class="btn-secondary" style="border: none;" aria-label="Convert another photo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+              <span>Convert Another</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+           Search Intent & AI Direct Answer Section
+           ====================================================================== -->
+      <section class="card" style="margin-top: 24px;">
+        <div class="section-header">
+          <h2 class="section-title">What is a Ray-Ban Meta Photo Converter?</h2>
+          <p class="section-desc">Understand how photo conversion unlocks the Instagram smart-glasses parallax effect.</p>
+        </div>
+        <p style="font-size: 0.98rem; color: #374151; line-height: 1.7; margin-bottom: 16px;">
+          A <strong>Ray-Ban Meta photo converter</strong> is an image formatting utility engineered to prepare standard digital photos for Instagram Story's native 3D Spin effect. Authentic Ray-Ban Meta smart glasses record portrait images with an exact sensor geometry of <strong>3024 × 4032 pixels</strong> (a 3:4 aspect ratio) and inject specific hardware identifiers (<code>Make: Meta AI</code> and <code>Model: Ray-Ban Meta Smart Glasses 2</code>) into the JPEG APP1 EXIF segment.
+        </p>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">
+          When an image with this precise combination of pixel dimensions, sRGB color tagging, and hardware EXIF tags is opened in the Instagram Story camera, Instagram's internal computer vision model computes a depth map and enables the 3D parallax spin badge.
+        </p>
+
+        <!-- Technical Specs Table / Chips -->
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Specification</th>
+                <th>Required Value</th>
+                <th>Why It Matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-feature">Target Resolution</td>
+                <td class="col-highlight">3024 × 4032 px</td>
+                <td>Exact 12MP sensor resolution of Ray-Ban Meta glasses</td>
+              </tr>
+              <tr>
+                <td class="col-feature">Aspect Ratio</td>
+                <td class="col-highlight">3:4 (Portrait)</td>
+                <td>Instagram checks portrait 3:4 ratio before enabling spin UI</td>
+              </tr>
+              <tr>
+                <td class="col-feature">EXIF Make &amp; Model</td>
+                <td class="col-highlight">Meta AI / Smart Glasses 2</td>
+                <td>Identifies hardware source in JPEG header</td>
+              </tr>
+              <tr>
+                <td class="col-feature">Color Profile</td>
+                <td class="col-highlight">Standard sRGB (0xA001 = 1)</td>
+                <td>Prevents color space incompatibility in Instagram's rendering engine</td>
+              </tr>
+              <tr>
+                <td class="col-feature">Privacy &amp; GPS</td>
+                <td class="col-highlight">100% Stripped &amp; Local</td>
+                <td>Protects private location coordinates; zero server uploads</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           Topic Clusters & Content Hub (Deep Internal Linking)
+           ====================================================================== -->
+      <section id="guides-section" class="card">
+        <div class="section-header">
+          <h2 class="section-title">Ray-Ban Meta Photo Guides &amp; Tutorials</h2>
+          <p class="section-desc">Explore in-depth tutorials, technical specifications, and troubleshooting guides.</p>
+        </div>
+
+        <div class="guides-grid">
+          <a href="./instagram-ray-ban-story/" class="guide-card">
+            <div class="guide-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+              </svg>
+            </div>
+            <h3 class="guide-card-title">Instagram Ray-Ban Story Guide</h3>
+            <p class="guide-card-desc">Learn how Instagram detects smart glasses photos and creates the 3D parallax gyro effect.</p>
+            <span class="guide-card-action">Read Guide &rarr;</span>
+          </a>
+
+          <a href="./ray-ban-meta-image-format/" class="guide-card">
+            <div class="guide-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="14" height="20" x="5" y="2" rx="2"/>
+                <line x1="12" y1="18" x2="12.01" y2="18"/>
+              </svg>
+            </div>
+            <h3 class="guide-card-title">Ray-Ban Meta Image Format</h3>
+            <p class="guide-card-desc">Detailed breakdown of the 3024×4032 3:4 portrait format and why other ratios fail.</p>
+            <span class="guide-card-action">Read Guide &rarr;</span>
+          </a>
+
+          <a href="./ray-ban-meta-exif/" class="guide-card">
+            <div class="guide-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+            </div>
+            <h3 class="guide-card-title">Ray-Ban Meta EXIF Guide</h3>
+            <p class="guide-card-desc">Complete explanation of Meta AI EXIF tags, IFD pointers, and GPS privacy protections.</p>
+            <span class="guide-card-action">Read Guide &rarr;</span>
+          </a>
+
+          <a href="./3024x4032-photo-converter/" class="guide-card">
+            <div class="guide-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 3 21 3 21 9"/>
+                <polyline points="9 21 3 21 3 15"/>
+                <line x1="21" y1="3" x2="14" y2="10"/>
+                <line x1="3" y1="21" x2="10" y2="14"/>
+              </svg>
+            </div>
+            <h3 class="guide-card-title">3024×4032 Photo Converter</h3>
+            <p class="guide-card-desc">How to crop and resize smartphone photos to native 12MP portrait glasses geometry.</p>
+            <span class="guide-card-action">Read Guide &rarr;</span>
+          </a>
+
+          <a href="./how-to-use-ray-ban-meta-photo-converter/" class="guide-card">
+            <div class="guide-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </div>
+            <h3 class="guide-card-title">Step-by-Step Conversion Tutorial</h3>
+            <p class="guide-card-desc">Walkthrough on converting photos, transferring to mobile, and posting to Instagram.</p>
+            <span class="guide-card-action">Read Guide &rarr;</span>
+          </a>
+
+          <a href="./ray-ban-meta-instagram-spin-effect/" class="guide-card">
+            <div class="guide-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <h3 class="guide-card-title">Spin Effect Troubleshooting</h3>
+            <p class="guide-card-desc">Troubleshoot missing 3D spin icons, messaging compression issues, and app versions.</p>
+            <span class="guide-card-action">Read Guide &rarr;</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Non-Intrusive AdSense Slot Container (Pre-configured, disabled until valid publisher ID) -->
+      <div class="adsense-slot-wrapper" aria-label="Advertisement">
+        <div class="adsense-slot-placeholder">
+          <!-- Google AdSense Container: Loads automatically when VITE_ADSENSE_CLIENT_ID is configured -->
+        </div>
+      </div>
+
+      <!-- Section: 3-Step Guide -->
+      <section id="how-it-works" class="card">
+        <div class="section-header">
+          <h2 class="section-title">How to Activate the 3D Spin Effect</h2>
+          <p class="section-desc">Follow these 3 simple steps to trigger Instagram's smart-glasses gyroscope animation.</p>
+        </div>
+
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-body">
+              <h4>Convert &amp; Format</h4>
+              <p>Upload your photo to MetaSpin. The converter centers and crops it to 3024 × 4032 and splices authentic Ray-Ban Meta EXIF tags directly into the JPEG bytes.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-body">
+              <h4>Open Instagram Story</h4>
+              <p>Tap <strong>Share Image</strong> to open Instagram directly, or open Instagram, swipe into the Story camera, and pick the saved photo from your camera roll.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-body">
+              <h4>Tap the Spin View Icon</h4>
+              <p>Instagram's Story engine detects the <code>Meta AI</code> glasses signature and displays the circular 3D Parallax Spin button in the top tray!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Comparison Table -->
+      <section id="comparison" class="card">
+        <div class="section-header">
+          <h2 class="section-title">Hardware vs. Converter Comparison</h2>
+          <p class="section-desc">How photos prepared with this converter compare to authentic Ray-Ban Meta smart glasses.</p>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Standard Phone Photo</th>
+                <th>Ray-Ban Meta Hardware</th>
+                <th class="col-highlight">MetaSpin Converter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-feature">Aspect Ratio</td>
+                <td>4:3 or 16:9</td>
+                <td>3:4 (Portrait)</td>
+                <td class="col-highlight">3:4 (Exact 3024×4032)</td>
+              </tr>
+              <tr>
+                <td class="col-feature">Resolution</td>
+                <td>Varies (12–48 MP)</td>
+                <td>3024 × 4032 (12 MP)</td>
+                <td class="col-highlight">3024 × 4032 (12 MP)</td>
+              </tr>
+              <tr>
+                <td class="col-feature">EXIF Make / Model</td>
+                <td>Apple / Samsung / Google</td>
+                <td>Meta AI / Smart Glasses</td>
+                <td class="col-highlight">Meta AI / Smart Glasses 2</td>
+              </tr>
+              <tr>
+                <td class="col-feature">Gyro Spin Support</td>
+                <td>❌ Not Detected</td>
+                <td>✅ Enabled</td>
+                <td class="col-highlight">✅ Enabled</td>
+              </tr>
+              <tr>
+                <td class="col-feature">Hardware Cost</td>
+                <td>$800 – $1,300 Phone</td>
+                <td>$299 – $379 Glasses</td>
+                <td class="col-highlight">$0 (Free, Open Web)</td>
+              </tr>
+              <tr>
+                <td class="col-feature">Privacy</td>
+                <td>Device Dependent</td>
+                <td>Meta Cloud Sync</td>
+                <td class="col-highlight">100% Client-Side Local</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: Explainer - How Instagram Detects Smart Glasses -->
+      <section class="card">
+        <div class="section-header">
+          <h2 class="section-title">How Instagram Detects Smart Glasses Photos</h2>
+          <p class="section-desc">Instagram checks three specific binary signatures in the JPEG file before unlocking the Spin View UI.</p>
+        </div>
+
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="bullet-text">
+              <strong>1. EXIF Make &amp; Model Match</strong>
+              <p>The JPEG APP1 header must define <code>Make = "Meta AI"</code> and <code>Model = "Ray-Ban Meta Smart Glasses 2"</code> with standard IFD pointers.</p>
+            </div>
+          </div>
+
+          <div class="bullet-item">
+            <div class="bullet-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="bullet-text">
+              <strong>2. Exact Pixel Dimensions (3024 × 4032)</strong>
+              <p>Ray-Ban Meta glasses capture 12MP photos with an exact pixel count of 3024px width by 4032px height in portrait orientation. Non-matching dimensions fail Instagram's feature detector.</p>
+            </div>
+          </div>
+
+          <div class="bullet-item">
+            <div class="bullet-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="bullet-text">
+              <strong>3. Standard sRGB Colorspace</strong>
+              <p>Tag <code>0xA001 (ColorSpace)</code> must be set to <code>1</code> (sRGB). Wide Display-P3 or custom color profiles cause Instagram to reject the hardware badge.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Why GPS is Stripped -->
+      <section class="card">
+        <div class="section-header">
+          <h2 class="section-title">Why We Strip GPS Coordinates</h2>
+          <p class="section-desc">Instagram never requires location coordinates to render the 3D spin view effect.</p>
+        </div>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6;">
+          Original smartphone photos often contain exact GPS latitude, longitude, and altitude in the EXIF metadata. When sharing to social platforms, this raw data can accidentally reveal your home, office, or private travel locations. MetaSpin completely strips the entire GPS IFD block, protecting your privacy while ensuring full compatibility with Instagram's feature detector.
+        </p>
+      </section>
+
+      <!-- Section: Troubleshooting -->
+      <section class="card">
+        <div class="section-header">
+          <h2 class="section-title">Troubleshooting &amp; Tips</h2>
+          <p class="section-desc">If the 3D Spin icon does not immediately appear in Instagram:</p>
+        </div>
+
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <div class="bullet-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12.01" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <div class="bullet-text">
+              <strong>Do NOT send via messaging apps first</strong>
+              <p>Apps like WhatsApp, Telegram, or Messenger compress photos and completely strip EXIF metadata. Use the direct <em>Share Image</em> button or save directly to your phone's camera roll.</p>
+            </div>
+          </div>
+
+          <div class="bullet-item">
+            <div class="bullet-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12.01" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <div class="bullet-text">
+              <strong>Use Instagram Story (Not Feed Carousel)</strong>
+              <p>The 3D Parallax Spin View is an Instagram Story-exclusive camera feature and will not appear in regular square feed posts.</p>
+            </div>
+          </div>
+
+          <div class="bullet-item">
+            <div class="bullet-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12.01" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <div class="bullet-text">
+              <strong>Keep Instagram Updated</strong>
+              <p>Ensure you are running the latest version of Instagram on iOS or Android to guarantee smart glasses UI support.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: FAQ Accordion -->
+      <section id="faq" class="card">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Common questions regarding Ray-Ban Meta photo conversion and Instagram Story features.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-summary">What is a Ray-Ban Meta photo converter?</summary>
+            <div class="faq-content">
+              A Ray-Ban Meta photo converter is a specialized image utility that reformats standard photos to match the exact hardware and metadata specifications of Ray-Ban Meta Smart Glasses. It resizes and cover-crops images to 3024 × 4032 pixels, applies standard sRGB color profiling, and splices authentic Meta AI camera EXIF tags into the JPEG header so Instagram unlocks its native 3D Parallax Spin Story effect.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">How does Instagram create the 3D parallax spin?</summary>
+            <div class="faq-content">
+              Instagram's Story engine runs an on-device machine learning depth estimation model that reconstructs a 2.5D mesh from the photo when smart-glasses metadata is present. As the viewer tilts their phone or drags the screen, Instagram animates the perspective using this depth map.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Are my photos uploaded to any server or cloud?</summary>
+            <div class="faq-content">
+              No. The entire conversion, cropping, and EXIF injection happens locally inside your web browser using HTML5 Canvas and client-side binary manipulation. Your photo never leaves your device and is never sent to any external server.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Why does the image have to be exactly 3024 × 4032?</summary>
+            <div class="faq-content">
+              This is the exact native resolution of the 12MP image sensor built into Ray-Ban Meta Smart Glasses. Instagram verifies both the hardware EXIF model string and this exact pixel geometry before activating the Spin View button.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Can I use the converter without Ray-Ban Meta glasses?</summary>
+            <div class="faq-content">
+              Yes. MetaSpin was built specifically to let anyone explore and experience the Instagram Story 3D spin view effect using photos taken from any smartphone, digital camera, or existing photo gallery.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Does this tool work on iPhone, iPad, and Android?</summary>
+            <div class="faq-content">
+              Yes. MetaSpin runs smoothly in Safari on iOS, Chrome on Android, and all modern desktop browsers including Chrome, Edge, and Firefox. You can take a photo directly from your mobile camera or upload from your photo library.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Is this converter completely free to use?</summary>
+            <div class="faq-content">
+              Yes, MetaSpin is 100% free with no registration, no subscription fees, no watermarks, and no download limits.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Can I host this on GitHub Pages?</summary>
+            <div class="faq-content">
+              Yes! MetaSpin is built as a static client-side web application with zero server-side dependencies. It can be hosted on GitHub Pages, Cloudflare Pages, Vercel, Netlify, or any static web hosting platform.
+            </div>
+          </details>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       Business Footer
+       ====================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-lockup">
+          <img class="brand-icon" src="./assets/app-icon.svg" alt="metaspin logo" width="36" height="36">
+          <span class="brand-title" style="font-size: 1.25rem;">metaspin</span>
+          <div class="footer-divider" aria-hidden="true"></div>
+          <img class="footer-co-brand-logo" src="./assets/zplaybox-logo.svg" alt="ZPlayBox Co-brand Logo" width="92" height="28" style="border-radius: 4px;">
+        </div>
+        <p class="footer-tagline">MetaSpin &bull; 100% Client-Side In-Browser Processing &bull; Open Web Utility</p>
+      </div>
+
+      <!-- Footer Multi-Column Grid -->
+      <div class="footer-grid">
+        <!-- Col 1: About MetaSpin -->
+        <div class="footer-col">
+          <h4>MetaSpin Photo Tools</h4>
+          <p class="footer-about-text">
+            MetaSpin is a free, privacy-first web utility for converting photos into the 3024×4032 (3:4) portrait format with smart-glasses EXIF metadata for Instagram Story 3D spin view.
+          </p>
+          <p class="footer-about-text" style="color: var(--color-text-subtle);">
+            All processing executes entirely in your browser using HTML5 Canvas. No photos are uploaded or stored.
+          </p>
+        </div>
+
+        <!-- Col 2: Converter Tools -->
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul class="footer-links">
+            <li><a href="#upload-section" class="footer-link">MetaSpin Converter</a></li>
+            <li><a href="./3024x4032-photo-converter/" class="footer-link">3024×4032 Image Converter</a></li>
+            <li><a href="./ray-ban-meta-exif/" class="footer-link">Meta AI EXIF Tool</a></li>
+            <li><a href="#how-it-works" class="footer-link">How to Use</a></li>
+            <li><a href="#comparison" class="footer-link">Hardware Comparison</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Guides & Resources -->
+        <div class="footer-col">
+          <h4>Guides &amp; Help</h4>
+          <ul class="footer-links">
+            <li><a href="./instagram-ray-ban-story/" class="footer-link">Instagram Story Guide</a></li>
+            <li><a href="./ray-ban-meta-image-format/" class="footer-link">Image Format (3:4)</a></li>
+            <li><a href="./ray-ban-meta-instagram-spin-effect/" class="footer-link">Spin Effect Fixes</a></li>
+            <li><a href="./how-to-use-ray-ban-meta-photo-converter/" class="footer-link">Step-by-Step Guide</a></li>
+            <li><a href="./faq/" class="footer-link">Full FAQ Hub</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Legal -->
+        <div class="footer-col">
+          <h4>Trust &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="./about/" class="footer-link">About MetaSpin</a></li>
+            <li><a href="./contact/" class="footer-link">Contact &amp; Support</a></li>
+            <li><a href="./privacy-policy/" class="footer-link">Privacy Policy</a></li>
+            <li><a href="./terms/" class="footer-link">Terms of Service</a></li>
+            <li><a href="./cookie-policy/" class="footer-link">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Legal Disclaimer -->
+      <div class="footer-disclaimer">
+        <p style="margin-bottom: 6px;">
+          <strong>Independent Disclaimer:</strong> MetaSpin is an independent third-party photo utility and is not affiliated with, sponsored by, authorized by, or endorsed by Meta Platforms, Inc., Ray-Ban, EssilorLuxottica, or Instagram.
+        </p>
+        <p style="margin-bottom: 8px;">
+          Ray-Ban&reg; is a registered trademark of Luxottica Group S.p.A. Meta&reg; and Instagram&reg; are registered trademarks of Meta Platforms, Inc. All trademarks, service marks, and trade names referenced on this site belong to their respective owners and are used strictly for identification and compatibility purposes.
+        </p>
+        <p class="copyright">&copy; 2026 MetaSpin. 100% Client-Side In-Browser Processing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Script -->
+  <script src="./script.js"></script>
+</body>
+</html>

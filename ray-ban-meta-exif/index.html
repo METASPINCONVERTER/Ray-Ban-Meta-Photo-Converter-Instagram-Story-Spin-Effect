@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ray-Ban Meta EXIF Guide: Metadata Tags Explained | rayBEN</title>
+  <meta name="description" content="Detailed analysis of Ray-Ban Meta smart glasses EXIF metadata: Make, Model, sRGB colorspace, Software version, and why GPS coordinates are stripped.">
+  <link rel="canonical" href="https://rayben.zplaybox.in/ray-ban-meta-exif/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rayben.zplaybox.in/ray-ban-meta-exif/">
+  <meta property="og:title" content="Ray-Ban Meta EXIF Guide: Metadata Tags Explained | rayBEN">
+  <meta property="og:description" content="The exact JPEG EXIF tags injected by Ray-Ban Meta smart glasses and how rayBEN formats them safely on-device.">
+  <meta property="og:image" content="https://rayben.zplaybox.in/assets/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/app-icon.svg">
+  <link rel="stylesheet" href="/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Ray-Ban Meta EXIF Guide: Metadata Tags Explained",
+    "description": "Technical reference for Ray-Ban Meta smart glasses EXIF headers, tags, and IFD data structures.",
+    "url": "https://rayben.zplaybox.in/ray-ban-meta-exif/",
+    "image": "https://rayben.zplaybox.in/assets/og-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "rayBEN"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "rayBEN",
+      "url": "https://rayben.zplaybox.in/"
+    },
+    "datePublished": "2026-03-01",
+    "dateModified": "2026-03-03"
+  }
+  </script>
+</head>
+<body>
+  <header class="top-header">
+    <div class="container nav-content">
+      <a href="/" class="brand-lockup" aria-label="rayBEN Home">
+        <svg class="brand-icon" width="36" height="36" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#FB0000"/>
+          <g fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="10" y="24" width="16" height="14" rx="5"/>
+            <rect x="38" y="24" width="16" height="14" rx="5"/>
+            <path d="M26 29 h12"/>
+            <path d="M10 29 C 6 27, 5 27, 4 25"/>
+            <path d="M54 29 C 58 27, 59 27, 60 25"/>
+          </g>
+        </svg>
+        <span class="brand-title">rayBEN</span>
+        <div class="brand-divider" aria-hidden="true"></div>
+        <span class="co-brand-tag">×</span>
+        
+      </a>
+      <nav class="nav-actions" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="/#upload-section" class="nav-link">Converter</a></li>
+          <li><a href="/#how-it-works" class="nav-link">How it Works</a></li>
+          <li><a href="/#guides-section" class="nav-link">Guides</a></li>
+          <li><a href="/#faq" class="nav-link">FAQ</a></li>
+          <li><a href="/about/" class="nav-link">About</a></li>
+        </ul>
+        <a href="/#upload-section" class="btn-nav-primary">Convert Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="article-container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-separator">/</li>
+          <li class="breadcrumb-item"><a href="/#guides-section">Guides</a></li>
+          <li class="breadcrumb-separator">/</li>
+          <li class="breadcrumb-item breadcrumb-current" aria-current="page">EXIF Metadata Guide</li>
+        </ol>
+      </nav>
+
+      <div class="article-hero">
+        <h1 class="article-title">Ray-Ban Meta EXIF: What Metadata Meta Glasses Inject into Photos</h1>
+        <p class="article-subtitle">A deep dive into the JPEG APP1 segment, hardware identification tags, and privacy implications of smart-glasses metadata.</p>
+        <div class="article-meta">
+          <span>By rayBEN Research Team</span>
+          <span>&bull;</span>
+          <span>5 min read</span>
+          <span>&bull;</span>
+          <span>Updated March 2026</span>
+        </div>
+      </div>
+
+      <div class="article-body">
+        <h2>What is EXIF Data?</h2>
+        <p>
+          EXIF (Exchangeable Image File Format) is a standardized specification for storing camera and shooting information directly inside image files (primarily JPEG and TIFF). When you capture a photograph, the camera hardware embeds parameters like shutter speed, aperture, focal length, device manufacturer, and orientation into the file header.
+        </p>
+
+        <h2>The Official Ray-Ban Meta EXIF Profile</h2>
+        <p>
+          When Ray-Ban Meta glasses export a photo to the Meta View app, the resulting JPEG APP1 marker contains the following core IFD (Image File Directory) tags:
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Tag ID</th>
+                <th>Field Name</th>
+                <th>Standard Value</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-feature">0x010F</td>
+                <td>Make</td>
+                <td class="col-highlight">Meta AI</td>
+                <td>Identifies hardware manufacturer</td>
+              </tr>
+              <tr>
+                <td class="col-feature">0x0110</td>
+                <td>Model</td>
+                <td class="col-highlight">Ray-Ban Meta Smart Glasses 2</td>
+                <td>Exact device model string checked by Instagram</td>
+              </tr>
+              <tr>
+                <td class="col-feature">0x0112</td>
+                <td>Orientation</td>
+                <td class="col-highlight">1 (Top-Left)</td>
+                <td>Upright orientation without transformation</td>
+              </tr>
+              <tr>
+                <td class="col-feature">0x0131</td>
+                <td>Software</td>
+                <td class="col-highlight">Meta View App / Firmware v2.x</td>
+                <td>Companion software version</td>
+              </tr>
+              <tr>
+                <td class="col-feature">0xA001</td>
+                <td>ColorSpace</td>
+                <td class="col-highlight">1 (sRGB)</td>
+                <td>Standard sRGB colorspace flag</td>
+              </tr>
+              <tr>
+                <td class="col-feature">0xA002</td>
+                <td>PixelXDimension</td>
+                <td class="col-highlight">3024</td>
+                <td>Image width in pixels</td>
+              </tr>
+              <tr>
+                <td class="col-feature">0xA003</td>
+                <td>PixelYDimension</td>
+                <td class="col-highlight">4032</td>
+                <td>Image height in pixels</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>How rayBEN Injects EXIF Client-Side</h2>
+        <p>
+          rayBEN utilizes the lightweight, zero-dependency <code>piexifjs</code> library to construct a pristine binary APP1 segment in the browser:
+        </p>
+        <ul>
+          <li><strong>Zero Binary Corruption:</strong> Preserves JPEG Huffman tables, quantization matrices, and SOF0 baseline markers.</li>
+          <li><strong>Calculated Offsets:</strong> IFD pointer offsets (0th IFD, Exif IFD, 1st IFD) are precisely aligned according to TIFF 6.0 big-endian (Motorola) format.</li>
+          <li><strong>Privacy Guarantee:</strong> The entire GPS IFD directory (Tag <code>0x8825</code>) is completely omitted, stripping location telemetry.</li>
+        </ul>
+
+        <div class="article-callout">
+          <div class="article-callout-title">Why Stripping GPS Protects You</div>
+          <p>
+            Unlike typical camera apps that inject sensitive latitude/longitude data, rayBEN ensures that your formatted photo contains the necessary hardware identifiers without leaking your home, work, or vacation coordinates to viewers online.
+          </p>
+        </div>
+
+        <div class="article-cta-box">
+          <h3>Inspect &amp; Convert Your Photos</h3>
+          <p>Inject authentic Ray-Ban Meta EXIF tags into your images right now in your browser.</p>
+          <a href="/#upload-section" class="btn-primary" style="display: inline-flex; width: auto; padding: 14px 28px;">Open EXIF Converter</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-lockup">
+          <img class="brand-icon" src="/assets/app-icon.svg" alt="metaspin logo" width="36" height="36">
+          <span class="brand-title" style="font-size: 1.25rem;">metaspin</span>
+          <div class="footer-divider" aria-hidden="true"></div>
+          <img class="footer-co-brand-logo" src="/assets/zplaybox-logo.svg" alt="ZPlayBox Co-brand Logo" width="92" height="28" style="border-radius: 4px;">
+        </div>
+          
+        </div>
+        <p class="footer-tagline">rayBEN &bull; 100% Client-Side In-Browser Processing &bull; Open Web Project</p>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>rayBEN Photo Tools</h4>
+          <p class="footer-about-text">Free client-side photo formatting tool for Ray-Ban Meta Instagram Story 3D spin views.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul class="footer-links">
+            <li><a href="/#upload-section" class="footer-link">Ray-Ban Meta Converter</a></li>
+            <li><a href="/3024x4032-photo-converter/" class="footer-link">3024×4032 Image Converter</a></li>
+            <li><a href="/ray-ban-meta-exif/" class="footer-link">Meta AI EXIF Tool</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul class="footer-links">
+            <li><a href="/instagram-ray-ban-story/" class="footer-link">Instagram Story Guide</a></li>
+            <li><a href="/ray-ban-meta-image-format/" class="footer-link">Image Format (3:4)</a></li>
+            <li><a href="/ray-ban-meta-instagram-spin-effect/" class="footer-link">Spin Effect Fixes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Trust &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="/about/" class="footer-link">About rayBEN</a></li>
+            <li><a href="/contact/" class="footer-link">Contact</a></li>
+            <li><a href="/privacy-policy/" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms/" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        <p><strong>Independent Disclaimer:</strong> rayBEN is an independent third-party photo utility and is not affiliated with, sponsored by, authorized by, or endorsed by Meta Platforms, Inc., Ray-Ban, EssilorLuxottica, or Instagram.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

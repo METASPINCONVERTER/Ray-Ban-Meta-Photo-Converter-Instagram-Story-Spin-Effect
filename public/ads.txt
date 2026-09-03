@@ -1,0 +1,4 @@
+# Google AdSense Publisher Identification
+# Replace pub-XXXXXXXXXXXXXXXX with your approved AdSense Publisher ID
+# Once approved, uncomment and add:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

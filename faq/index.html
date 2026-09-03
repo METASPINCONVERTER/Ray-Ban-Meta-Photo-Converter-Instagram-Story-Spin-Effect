@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions – MetaSpin Photo Converter</title>
+  <meta name="description" content="Answers to common questions about Ray-Ban Meta photo conversion, 3024×4032 image resolutions, Instagram 3D spin view, and EXIF metadata handling.">
+  <link rel="canonical" href="https://metaspin.zplaybox.in/faq/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metaspin.zplaybox.in/faq/">
+  <meta property="og:title" content="Frequently Asked Questions – MetaSpin Photo Converter">
+  <meta property="og:description" content="Comprehensive answers regarding Ray-Ban Meta image formatting, EXIF signatures, and Instagram 3D parallax features.">
+  <meta property="og:image" content="https://metaspin.zplaybox.in/assets/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/app-icon.svg">
+  <link rel="stylesheet" href="/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Ray-Ban Meta photo converter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Ray-Ban Meta photo converter is a specialized utility that reformats existing photos to match the exact hardware and metadata specifications of Ray-Ban Meta Smart Glasses: 3024×4032 resolution (3:4 portrait ratio), sRGB color profile, and Meta AI EXIF signature."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Instagram create the 3D spin view effect?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Instagram runs an on-device computer vision depth estimation model that generates a 2.5D mesh from the photo when it detects valid smart-glasses metadata. When a user tilts their phone, the perspective shifts realistically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my images uploaded to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. rayBEN processes all photos locally inside your device browser using HTML5 Canvas and client-side binary parsing. Photos are never uploaded or stored."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert landscape photos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The converter automatically centers and crops landscape images to the required 3024×4032 (3:4) portrait aspect ratio while maintaining maximum detail."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why didn't the spin effect show up in Instagram Story?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This usually occurs if the photo was sent via messaging apps that compress and strip EXIF (like WhatsApp or Telegram), if the photo is posted to the regular feed carousel, or if your Instagram app needs an update."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="top-header">
+    <div class="container nav-content">
+      <a href="/" class="brand-lockup" aria-label="metaspin Home">
+        <img class="brand-icon" src="/assets/app-icon.svg" alt="metaspin logo" width="36" height="36">
+        <span class="brand-title">metaspin</span>
+        <div class="brand-divider" aria-hidden="true"></div>
+        <span class="co-brand-tag">×</span>
+        <img class="co-brand-logo-img" src="/assets/zplaybox-logo.svg" alt="ZPlayBox Co-brand Logo" width="92" height="28" style="border-radius: 4px;">
+      </a>
+      <nav class="nav-actions" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="/#upload-section" class="nav-link">Converter</a></li>
+          <li><a href="/#how-it-works" class="nav-link">How it Works</a></li>
+          <li><a href="/#guides-section" class="nav-link">Guides</a></li>
+          <li><a href="/faq/" class="nav-link" style="color: var(--color-primary); font-weight: 700;">FAQ</a></li>
+          <li><a href="/about/" class="nav-link">About</a></li>
+        </ul>
+        <a href="/#upload-section" class="btn-nav-primary">Convert Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="article-container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-separator">/</li>
+          <li class="breadcrumb-item breadcrumb-current" aria-current="page">FAQ</li>
+        </ol>
+      </nav>
+
+      <div class="article-hero">
+        <h1 class="article-title">Frequently Asked Questions</h1>
+        <p class="article-subtitle">Everything you need to know about photo dimensions, EXIF tags, and Instagram Story 3D spin view.</p>
+        <div class="article-meta">
+          <span>Knowledge Hub</span>
+          <span>&bull;</span>
+          <span>Updated March 2026</span>
+        </div>
+      </div>
+
+      <div class="article-body">
+        <h2>General Questions</h2>
+
+        <div class="faq-list" style="margin-bottom: 32px;">
+          <details class="faq-item" open>
+            <summary class="faq-summary">What is a Ray-Ban Meta photo converter?</summary>
+            <div class="faq-content">
+              A Ray-Ban Meta photo converter is a specialized image utility that reformats standard camera photos to match the exact hardware and metadata specifications of Ray-Ban Meta Smart Glasses. It resizes and cover-crops images to 3024 × 4032 pixels (3:4 portrait ratio), applies standard sRGB color profiling, and splices authentic Meta AI camera EXIF tags into the JPEG header so Instagram unlocks its native 3D Parallax Spin Story effect.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Do I need to own Ray-Ban Meta glasses to use this tool?</summary>
+            <div class="faq-content">
+              No. MetaSpin was built specifically so anyone can experience the 3D parallax spin view on Instagram Stories without owning the physical hardware. You can convert photos taken from iPhones, Androids, mirrorless cameras, or downloaded images.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Is this service completely free?</summary>
+            <div class="faq-content">
+              Yes, rayBEN is completely free with no subscriptions, limits, or hidden fees. We also never place watermarks or visual overlays on your converted photos.
+            </div>
+          </details>
+        </div>
+
+        <h2>Privacy &amp; Security</h2>
+
+        <div class="faq-list" style="margin-bottom: 32px;">
+          <details class="faq-item">
+            <summary class="faq-summary">Are my photos uploaded to any server or cloud?</summary>
+            <div class="faq-content">
+              No. The entire conversion, cropping, and EXIF injection happens locally inside your web browser using HTML5 Canvas and client-side binary manipulation. Your photo never leaves your device and is never sent to any external server.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">What happens to GPS and location data in my photos?</summary>
+            <div class="faq-content">
+              rayBEN automatically strips the entire GPS IFD table from your photo's EXIF metadata. This ensures that personal location data (such as home or workplace coordinates) is completely removed before sharing on public social platforms.
+            </div>
+          </details>
+        </div>
+
+        <h2>Instagram Compatibility</h2>
+
+        <div class="faq-list" style="margin-bottom: 32px;">
+          <details class="faq-item">
+            <summary class="faq-summary">Why does the image have to be exactly 3024 × 4032 pixels?</summary>
+            <div class="faq-content">
+              3024 × 4032 is the native sensor resolution of the 12 Megapixel camera in Ray-Ban Meta Smart Glasses. Instagram's feature-detection system checks both the EXIF hardware signature and this exact pixel geometry before activating the Spin View button.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Why isn't the 3D spin button showing up in my Instagram Story?</summary>
+            <div class="faq-content">
+              The three most common causes are:
+              <ol style="margin-top: 8px;">
+                <li>Sending the photo through messaging apps like WhatsApp, Telegram, or AirDrop with compression enabled, which strips EXIF tags.</li>
+                <li>Posting to the regular feed carousel instead of Instagram Story.</li>
+                <li>Using an outdated version of the Instagram app.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Can I post converted photos to regular Instagram Feed or Reels?</summary>
+            <div class="faq-content">
+              You can post the photos anywhere, but the 3D Parallax Spin view effect is an interactive feature exclusive to Instagram Stories.
+            </div>
+          </details>
+        </div>
+
+        <div class="article-cta-box">
+          <h3>Ready to Try It Out?</h3>
+          <p>Format any photo now in seconds with 100% on-device client-side privacy.</p>
+          <a href="/#upload-section" class="btn-primary" style="display: inline-flex; width: auto; padding: 14px 28px;">Convert Photo Now</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-lockup">
+          <img class="brand-icon" src="/assets/app-icon.svg" alt="metaspin logo" width="36" height="36">
+          <span class="brand-title" style="font-size: 1.25rem;">metaspin</span>
+          <div class="footer-divider" aria-hidden="true"></div>
+          <img class="footer-co-brand-logo" src="/assets/zplaybox-logo.svg" alt="ZPlayBox Co-brand Logo" width="92" height="28" style="border-radius: 4px;">
+        </div>
+        <p class="footer-tagline">MetaSpin &bull; 100% Client-Side In-Browser Processing &bull; Open Web Utility</p>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>MetaSpin Photo Tools</h4>
+          <p class="footer-about-text">Free client-side photo formatting tool for Ray-Ban Meta Instagram Story 3D spin views.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul class="footer-links">
+            <li><a href="/#upload-section" class="footer-link">Ray-Ban Meta Converter</a></li>
+            <li><a href="/3024x4032-photo-converter/" class="footer-link">3024×4032 Image Converter</a></li>
+            <li><a href="/ray-ban-meta-exif/" class="footer-link">Meta AI EXIF Tool</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul class="footer-links">
+            <li><a href="/instagram-ray-ban-story/" class="footer-link">Instagram Story Guide</a></li>
+            <li><a href="/ray-ban-meta-image-format/" class="footer-link">Image Format (3:4)</a></li>
+            <li><a href="/ray-ban-meta-instagram-spin-effect/" class="footer-link">Spin Effect Fixes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Trust &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="/about/" class="footer-link">About MetaSpin</a></li>
+            <li><a href="/contact/" class="footer-link">Contact</a></li>
+            <li><a href="/privacy-policy/" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms/" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        <p style="margin-bottom: 6px;">
+          <strong>Independent Disclaimer:</strong> MetaSpin is an independent third-party photo utility and is not affiliated with, sponsored by, authorized by, or endorsed by Meta Platforms, Inc., Ray-Ban, EssilorLuxottica, or Instagram. All product and company names are trademarks™ or registered® trademarks of their respective holders.
+        </p>
+        <p style="margin-bottom: 8px;">
+          Ray-Ban&reg; is a registered trademark of Luxottica Group S.p.A. Meta&reg; and Instagram&reg; are registered trademarks of Meta Platforms, Inc. All trademarks, service marks, and trade names referenced on this site belong to their respective owners and are used strictly for identification and compatibility purposes.
+        </p>
+        <p class="copyright" style="font-size: 0.8rem; color: var(--color-text-subtle);">&copy; 2026 MetaSpin. 100% Client-Side In-Browser Processing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Remix Meta Spin Studio",
+  "description": "Privacy-first image formatting and metadata preparation tool for 3:4 portrait workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
