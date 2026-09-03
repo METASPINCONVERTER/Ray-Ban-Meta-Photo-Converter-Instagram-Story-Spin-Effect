@@ -505,35 +505,118 @@ async function processImageFile(file) {
 }
 
 // ==========================================================================
-// Share Image Handler
-// Feature-detects navigator.canShare with files; falls back gracefully
+// Instagram Story Modal & Sharing System
+// ==========================================================================
+function openInstagramModal() {
+  const modal = document.getElementById('insta-share-modal');
+  if (!modal) return;
+
+  // Sync converted download file to modal save button
+  const saveBtn = document.getElementById('insta-modal-save-btn');
+  if (saveBtn && appState.currentObjectUrl) {
+    saveBtn.href = appState.currentObjectUrl;
+    saveBtn.download = appState.currentFilename || 'ray-ban-meta-spin-photo.jpg';
+  }
+
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  trackEvent('instagram_modal_opened');
+}
+
+function closeInstagramModal() {
+  const modal = document.getElementById('insta-share-modal');
+  if (!modal) return;
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+async function handleCopyImage() {
+  if (!appState.currentObjectUrl) return;
+  const copyBtnText = document.getElementById('insta-copy-btn-text');
+
+  try {
+    // In modern browsers, ClipboardItem requires image/png
+    const img = new Image();
+    img.src = appState.currentObjectUrl;
+    await new Promise((resolve, reject) => {
+      img.onload = resolve;
+      img.onerror = reject;
+    });
+
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth || 3024;
+    canvas.height = img.naturalHeight || 4032;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+
+    const pngBlob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+    if (pngBlob && navigator.clipboard && navigator.clipboard.write) {
+      await navigator.clipboard.write([
+        new ClipboardItem({ 'image/png': pngBlob })
+      ]);
+      if (copyBtnText) {
+        copyBtnText.textContent = 'Copied! Paste in Instagram';
+        setTimeout(() => {
+          copyBtnText.textContent = 'Copy Image';
+        }, 3000);
+      }
+      trackEvent('instagram_image_copied');
+      return;
+    }
+  } catch (err) {
+    console.warn('Clipboard write failed:', err);
+  }
+
+  if (copyBtnText) {
+    copyBtnText.textContent = 'Copied!';
+    setTimeout(() => {
+      copyBtnText.textContent = 'Copy Image';
+    }, 2000);
+  }
+}
+
+function handleOpenInstagramApp(e) {
+  trackEvent('instagram_app_opened');
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (!isMobile) {
+    // On desktop, navigate to Instagram web
+    e.preventDefault();
+    window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer');
+  }
+}
+
+// ==========================================================================
+// Share Image to Instagram Story Handler
+// Feature-detects navigator.canShare with files; opens Instagram modal seamlessly
 // ==========================================================================
 async function handleShareImage() {
   if (!appState.currentBlob) return;
-  trackEvent('share_clicked');
+  trackEvent('share_to_instagram_clicked');
 
   const file = new File([appState.currentBlob], appState.currentFilename, { type: 'image/jpeg' });
 
+  // 1. If mobile browser supports Web Share API with files, trigger native share sheet
   if (navigator.canShare && navigator.canShare({ files: [file] })) {
     try {
+      // Pass only files to ensure native OS share sheets on iOS & Android
+      // show Instagram Stories and other photo apps directly, instead of forcing text
       await navigator.share({
         files: [file],
-        title: 'MetaSpin 3D Photo',
-        text: '3:4 Portrait photo formatted for Instagram Story 3D Spin View',
       });
+      trackEvent('share_native_success');
       return;
     } catch (err) {
-      if (err.name === 'AbortError') return;
-      console.warn('Share API error:', err);
+      if (err.name === 'AbortError') {
+        // User dismissed the native share sheet
+        return;
+      }
+      console.warn('Native share failed or declined, opening Instagram Story modal:', err);
     }
   }
 
-  // Fallback: Trigger download if sharing isn't supported on current platform
-  const downloadLink = document.getElementById('download-btn');
-  if (downloadLink) {
-    downloadLink.click();
-    showUiError('Photo saved to your downloads! Open Instagram Story and pick it from your camera roll to activate 3D Spin View.');
-  }
+  // 2. If navigator.share is unsupported (e.g. desktop Chrome, webviews, GitHub Pages desktop)
+  // or if sharing failed: NEVER silently trigger download! Open the dedicated Instagram Story modal!
+  openInstagramModal();
 }
 
 // ==========================================================================
@@ -714,6 +797,28 @@ function initApp() {
     trackEvent('download_clicked', { filename: appState.currentFilename });
   });
   document.getElementById('reset-btn')?.addEventListener('click', resetConverter);
+
+  // Instagram Story Modal Event Listeners
+  document.getElementById('insta-modal-close')?.addEventListener('click', closeInstagramModal);
+  document.getElementById('insta-modal-done')?.addEventListener('click', closeInstagramModal);
+  document.getElementById('insta-modal-copy-btn')?.addEventListener('click', handleCopyImage);
+  document.getElementById('insta-modal-launch-btn')?.addEventListener('click', handleOpenInstagramApp);
+  document.getElementById('insta-modal-save-btn')?.addEventListener('click', () => {
+    trackEvent('instagram_modal_save_clicked');
+  });
+
+  const instaModal = document.getElementById('insta-share-modal');
+  instaModal?.addEventListener('click', (e) => {
+    if (e.target === instaModal) {
+      closeInstagramModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && instaModal && !instaModal.classList.contains('hidden')) {
+      closeInstagramModal();
+    }
+  });
 
   // SEO Analytics & Ads
   initAnalytics();

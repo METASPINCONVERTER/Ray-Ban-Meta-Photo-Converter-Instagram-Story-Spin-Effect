@@ -391,15 +391,13 @@
 
           <!-- Action Buttons -->
           <div class="action-buttons">
-            <button type="button" id="share-btn" class="btn-primary" aria-label="Share converted image to Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"/>
-                <circle cx="6" cy="12" r="3"/>
-                <circle cx="18" cy="19" r="3"/>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            <button type="button" id="share-btn" class="btn-instagram-story" aria-label="Share converted image to Instagram Story">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
               </svg>
-              <span>Share Image</span>
+              <span>Share to Instagram Story</span>
             </button>
 
             <a id="download-btn" href="#" download="ray-ban-meta-spin-photo.jpg" class="btn-secondary" aria-label="Download converted 3024x4032 JPEG photo">
@@ -918,6 +916,90 @@
       </div>
     </div>
   </footer>
+
+  <!-- ======================================================================
+       Instagram Story Share Modal & Direct Workflow
+       ====================================================================== -->
+  <div id="insta-share-modal" class="insta-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="insta-modal-title">
+    <div class="insta-modal-card">
+      <div class="insta-modal-header">
+        <div class="insta-modal-title-lockup">
+          <div class="insta-icon-badge" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <div>
+            <h3 id="insta-modal-title" class="insta-modal-title">Share to Instagram Story</h3>
+            <p class="insta-modal-subtitle">Follow these quick steps to trigger Instagram's 3D Spin View</p>
+          </div>
+        </div>
+        <button type="button" class="insta-modal-close-btn" id="insta-modal-close" aria-label="Close Instagram Share Dialog">&times;</button>
+      </div>
+
+      <div class="insta-modal-body">
+        <!-- Step 1: Save or Copy -->
+        <div class="insta-step-card">
+          <div class="insta-step-indicator">1</div>
+          <div class="insta-step-details">
+            <h4 class="insta-step-heading">Save or Copy Your 3:4 Portrait Photo</h4>
+            <p class="insta-step-text">The converted photo has 3024×4032 resolution and authentic Ray-Ban Meta EXIF headers ready for Instagram Story.</p>
+            <div class="insta-step-btns">
+              <a id="insta-modal-save-btn" href="#" download="ray-ban-meta-spin-photo.jpg" class="btn-sm btn-outline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span>Save to Camera Roll</span>
+              </a>
+              <button type="button" id="insta-modal-copy-btn" class="btn-sm btn-outline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span id="insta-copy-btn-text">Copy Image</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Open Instagram App -->
+        <div class="insta-step-card">
+          <div class="insta-step-indicator">2</div>
+          <div class="insta-step-details">
+            <h4 class="insta-step-heading">Launch Instagram Story Camera</h4>
+            <p class="insta-step-text">Open Instagram on your phone and swipe right to access the Story Camera tray.</p>
+            <div class="insta-step-btns">
+              <a href="instagram://story-camera" id="insta-modal-launch-btn" class="btn-sm btn-instagram-gradient" target="_blank" rel="noopener">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                <span>Open Instagram App</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Trigger 3D Spin -->
+        <div class="insta-step-card">
+          <div class="insta-step-indicator">3</div>
+          <div class="insta-step-details">
+            <h4 class="insta-step-heading">Select Photo &amp; Tap Spin View</h4>
+            <p class="insta-step-text">Tap the bottom-left gallery icon in Instagram Story. Select your photo — Instagram will automatically detect the Meta hardware EXIF and reveal the circular <strong>Spin View</strong> toggle icon!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="insta-modal-footer">
+        <button type="button" id="insta-modal-done" class="btn-primary" style="width: 100%;">Close</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Application Script -->
   <script src="./script.js"></script>
